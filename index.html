@@ -2,10 +2,36 @@
 <html>
     <head>
         <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+								<script language="javascript"  src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
     <title>Civic Programs</title>
     </head>
-    
-    <body>
-    Share all your civic programs with the community! 
-    </body>
+					<script id="demo" type="text/javascript">
+						$(document).ready(function() {
+							// our array of objects for some data to play with
+							var arr = [
+								{ chapter_num : "1", chapter_title : "Démocratie et Institutions", measure_num : "1", measure: "Réunir une assemblé constituante pour passer à la 6ème République"},
+								{ chapter_num : "1", chapter_title : "Démocratie et Institutions", measure_num : "2", measure: "Abolir la monarchie présidentielle"},
+								{ chapter_num : "1", chapter_title : "Démocratie et Institutions", measure_num : "3", measure: "Balayer l'oligarchie, abolir les privilèges de la caste"}
+							]
+					
+							var i = 0,
+								arrLen = arr.length - 1
+								str = "";
+							// loop through all elements in the array, building a form for each object
+							for (; i <= arrLen; i++ ) {
+							str = str + '<form>'
+											+ '<label for="chapter_num"><b>Chapitre  </b></label> <input type="text" name="chapter_num" size="2" value="' + arr[i].chapter_num + '" />'
+											+ '<label for="chapter_title"><b>: </b></label> <input type="text" name="chapter_title" size="50" value="' + arr[i].chapter_title + '" />'
+											+ '<label for="measure_num"><b><u><li> Measure </li></u></b></label> <input type="text" name="measure_num" size="3" value="' + arr[i].measure_num + '" />'
+											+ '<label for="measure"><b> :</b></label> <input type="text" name="measure" size="100" value="' + arr[i].measure + '" />'
+											+ '<button type="submit">Submit</button>'
+										+ "</form>";
+							};
+							//append the markup to the DOM
+							$("#measures").html(str);
+						});
+					</script>
+   <body>
+				<div id="measures"></div>
+			</body> 
 </html>
