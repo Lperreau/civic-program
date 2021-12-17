@@ -2,36 +2,25 @@
 <html>
     <head>
         <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
-								<script language="javascript"  src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
     <title>Civic Programs</title>
     </head>
-					<script id="demo" type="text/javascript">
-						$(document).ready(function() {
-							// our array of objects for some data to play with
-							var arr = [
-								{ chapter_num : "1", chapter_title : "Démocratie et Institutions", measure_num : "1", measure: "Réunir une assemblé constituante pour passer à la 6ème République"},
-								{ chapter_num : "1", chapter_title : "Démocratie et Institutions", measure_num : "2", measure: "Abolir la monarchie présidentielle"},
-								{ chapter_num : "1", chapter_title : "Démocratie et Institutions", measure_num : "3", measure: "Balayer l'oligarchie, abolir les privilèges de la caste"}
-							]
-					
-							var i = 0,
-								arrLen = arr.length - 1
-								str = "";
-							// loop through all elements in the array, building a form for each object
-							for (; i <= arrLen; i++ ) {
-							str = str + '<form>'
-											+ '<label for="chapter_num"><b>Chapitre  </b></label> <input type="text" name="chapter_num" size="2" value="' + arr[i].chapter_num + '" />'
-											+ '<label for="chapter_title"><b>: </b></label> <input type="text" name="chapter_title" size="50" value="' + arr[i].chapter_title + '" />'
-											+ '<label for="measure_num"><b><u><li> Measure </li></u></b></label> <input type="text" name="measure_num" size="3" value="' + arr[i].measure_num + '" />'
-											+ '<label for="measure"><b> :</b></label> <input type="text" name="measure" size="100" value="' + arr[i].measure + '" />'
-											+ '<button type="submit">Submit</button>'
-										+ "</form>";
-							};
-							//append the markup to the DOM
-							$("#measures").html(str);
-						});
-					</script>
-   <body>
-				<div id="measures"></div>
-			</body> 
+    <body>
+					<main>
+						<h1>Civic Program</h1>
+						<civic-measure 
+							index="1"
+						 title="Réunir une Assemblée constituante"
+							description="La nouvelle Constitution dont la France a besoin doit être radicalement nouvelle, y compris dans sa méthode d'écriture : elle ne peut être un simple rafistolage de la 5e République, ni se résumer à quelques réformes octroyées par le futur président de la République. C'est le peuple lui-même qui doit s'emparer de la question et s'impliquer tout au long d'un processus constituant. Nous proposons la convocation d'une assemblée spécifiquement chargée de rédiger une nouvelle Constitution sous le contrôle des citoyens : une Assemblée constituante. Nous soumettrons à ses travaux des propositions pour une 6e République démocratique, égalitaire, instituant de nouveaux droits et imposant l'impératif écologique."
+							></civic-measure>
+							<civic-measure 
+							index="2"
+						 title="Balayer l'oligarchie, abolir les privilèges de la caste"
+							description="La démocratie française est malade des privilèges, de l'argent-roi et de la collusion entre politique et finance. Une caste de privilégiés, coupée des réalités de la vie du peuple, a confisqué le pouvoir. Cela doit cesser : la vertu doit être au centre de l'action politique."
+							></civic-measure>
+					</main>
+					<article>
+						
+					</article>
+    <script src="./resources/js/index.js"></script>
+				</body>
 </html>
